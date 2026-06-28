@@ -1,1 +1,608 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Scramblix</title>
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --primary-dark: #4834d4;
+            --accent: #00cec9;
+            --bg: #0a0a1a;
+            --bg-card: #12122a;
+            --bg-card-hover: #1a1a3e;
+            --text: #e2e2f0;
+            --text-muted: #8888aa;
+            --border: #2a2a5a;
+            --radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* Animated background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(108, 92, 231, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(0, 206, 201, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(108, 92, 231, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 0 50px;
+            position: relative;
+        }
+
+        .logo-mark {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(108, 92, 231, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .subtitle a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .subtitle a:hover {
+            opacity: 0.8;
+        }
+
+        .effective-date {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 18px;
+            background: rgba(108, 92, 231, 0.15);
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent);
+        }
+
+        /* Navigation pills */
+        .nav-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 36px 0 50px;
+        }
+
+        .nav-pills a {
+            padding: 8px 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.25s;
+        }
+
+        .nav-pills a:hover {
+            background: var(--bg-card-hover);
+            color: var(--text);
+            border-color: var(--primary);
+        }
+
+        /* Sections */
+        section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 36px 40px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        section:hover {
+            border-color: rgba(108, 92, 231, 0.4);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #fff;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2 .icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin: 24px 0 10px;
+        }
+
+        p {
+            margin-bottom: 14px;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        ul {
+            list-style: none;
+            margin: 10px 0 14px;
+        }
+
+        ul li {
+            padding: 6px 0 6px 24px;
+            position: relative;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        ul li::before {
+            content: '›';
+            position: absolute;
+            left: 6px;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Highlight box */
+        .highlight-box {
+            background: rgba(0, 206, 201, 0.06);
+            border: 1px solid rgba(0, 206, 201, 0.2);
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin: 16px 0;
+            font-size: 0.92rem;
+        }
+
+        .highlight-box.warning {
+            background: rgba(255, 193, 7, 0.06);
+            border-color: rgba(255, 193, 7, 0.2);
+        }
+
+        .highlight-box.warning strong {
+            color: #ffc107;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 14px 0;
+            font-size: 0.92rem;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: rgba(108, 92, 231, 0.1);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            color: var(--text);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(108, 92, 231, 0.03);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer .footer-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .contact-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 30px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .contact-block .email {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            h1 { font-size: 1.8rem; }
+            section { padding: 24px 20px; }
+            .nav-pills { gap: 6px; }
+            .nav-pills a { padding: 6px 12px; font-size: 0.8rem; }
+            table { font-size: 0.82rem; }
+            th, td { padding: 8px 10px; }
+        }
+
+        /* Smooth scroll */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <div class="logo-mark">S</div>
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">
+            <strong>Scramblix</strong> — Secure Messaging &amp; Encryption
+        </p>
+        <div class="effective-date">Effective Date: June 28, 2026</div>
+    </header>
+
+    <!-- Quick nav -->
+    <nav class="nav-pills">
+        <a href="#overview">Overview</a>
+        <a href="#info-we-collect">Data We Collect</a>
+        <a href="#how-we-use">How We Use Data</a>
+        <a href="#sharing">Sharing</a>
+        <a href="#cookies">Cookies</a>
+        <a href="#security">Security</a>
+        <a href="#rights">Your Rights</a>
+        <a href="#retention">Retention</a>
+        <a href="#children">Children</a>
+        <a href="#changes">Changes</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Section 1 -->
+    <section id="overview">
+        <h2><span class="icon">📋</span> 1. Overview</h2>
+        <p>
+            At <strong>Scramblix</strong> ("we," "our," or "us"), we take your privacy seriously. This Privacy Policy describes how we collect, use, disclose, and protect your personal information when you use the Scramblix application and related services (collectively, the "Service").
+        </p>
+        <p>
+            Scramblix is designed with privacy at its core — our encryption-first architecture means that, by design, we minimize the data we can access. This policy explains what limited data we do handle and why.
+        </p>
+        <div class="highlight-box">
+            <strong>🔐 Key Principle:</strong> Your messages and files are end-to-end encrypted. We cannot read them, and neither can anyone else.
+        </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="info-we-collect">
+        <h2><span class="icon">📊</span> 2. Information We Collect</h2>
+
+        <h3>a) Information You Provide Directly</h3>
+        <ul>
+            <li><strong>Account Information:</strong> Display name, username, and email address when you register.</li>
+            <li><strong>Profile Data:</strong> Optional profile picture or bio you choose to add.</li>
+            <li><strong>Communications:</strong> Messages you send to our support team at <a href="mailto:example@example.com">example@example.com</a>.</li>
+            <li><strong>Feedback &amp; Surveys:</strong> Any information you voluntarily provide through feedback forms or beta testing programs.</li>
+        </ul>
+
+        <h3>b) Information Collected Automatically</h3>
+        <ul>
+            <li><strong>Device Information:</strong> Operating system, device type, browser type, and app version.</li>
+            <li><strong>Usage Data:</strong> Feature usage statistics, crash reports, and performance metrics (anonymized where possible).</li>
+            <li><strong>IP Address &amp; Location:</strong> Approximate geographic location derived from your IP address for security and localization purposes.</li>
+            <li><strong>Log Data:</strong> Access timestamps, feature interactions, and system logs to maintain service stability.</li>
+        </ul>
+
+        <h3>c) Information We Do <strong>NOT</strong> Collect</h3>
+        <div class="highlight-box warning">
+            <strong>🚫 What We Never See:</strong>
+            <ul>
+                <li>The content of your encrypted messages or calls.</li>
+                <li>The files you send through encrypted channels.</li>
+                <li>Your encryption keys — these never leave your device.</li>
+                <li>Your contacts list (stored locally on-device only).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section id="how-we-use">
+        <h2><span class="icon">⚙️</span> 3. How We Use Your Information</h2>
+        <p>We use the limited data we collect for the following purposes:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Purpose</th>
+                    <th>Legal Basis</th>
+                    <th>Data Used</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Provide &amp; maintain the Service</td>
+                    <td>Contractual necessity</td>
+                    <td>Account info, device data</td>
+                </tr>
+                <tr>
+                    <td>Secure your account</td>
+                    <td>Legitimate interest</td>
+                    <td>IP address, login logs</td>
+                </tr>
+                <tr>
+                    <td>Improve performance &amp; features</td>
+                    <td>Legitimate interest</td>
+                    <td>Usage analytics (anonymized)</td>
+                </tr>
+                <tr>
+                    <td>Respond to support requests</td>
+                    <td>Contractual necessity</td>
+                    <td>Communications with us</td>
+                </tr>
+                <tr>
+                    <td>Send important service updates</td>
+                    <td>Legitimate interest</td>
+                    <td>Email address</td>
+                </tr>
+                <tr>
+                    <td>Comply with legal obligations</td>
+                    <td>Legal requirement</td>
+                    <td>As required by law</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="sharing">
+        <h2><span class="icon">🔗</span> 4. Information Sharing &amp; Disclosure</h2>
+        <p>
+            We do <strong>not</strong> sell your personal information. Period. We share data only in the following limited circumstances:
+        </p>
+        <ul>
+            <li><strong>Service Providers:</strong> Trusted third-party vendors who assist with infrastructure, analytics, or support (bound by strict confidentiality agreements).</li>
+            <li><strong>Legal Compliance:</strong> When required by valid subpoena, court order, or applicable law — and only to the minimum extent necessary.</li>
+            <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or asset sale, your data may be transferred as part of that transaction, with prior notice to you.</li>
+            <li><strong>Security &amp; Safety:</strong> To protect the rights, property, or safety of Scramblix, our users, or the public — only when necessary and lawful.</li>
+        </ul>
+        <div class="highlight-box">
+            <strong>🛡️ Transparency Commitment:</strong> We will notify you of any government or legal request for your data unless legally prohibited from doing so.
+        </div>
+    </section>
+
+    <!-- Section 5 -->
+    <section id="cookies">
+        <h2><span class="icon">🍪</span> 5. Cookies &amp; Tracking Technologies</h2>
+        <p>
+            Scramblix uses cookies and similar technologies on our web platform to enhance your experience:
+        </p>
+        <ul>
+            <li><strong>Essential Cookies:</strong> Required for core functionality such as authentication and security. These cannot be disabled.</li>
+            <li><strong>Analytics Cookies:</strong> Help us understand how users interact with our service (anonymized, aggregated data only).</li>
+            <li><strong>Preference Cookies:</strong> Remember your settings and preferences for a personalized experience.</li>
+        </ul>
+        <p>
+            You can manage your cookie preferences through your browser settings. Disabling certain cookies may affect the functionality of the Service.
+        </p>
+    </section>
+
+    <!-- Section 6 -->
+    <section id="security">
+        <h2><span class="icon">🛡️</span> 6. Data Security</h2>
+        <p>
+            Security is foundational to Scramblix. We implement industry-standard technical and organizational measures to protect your data:
+        </p>
+        <ul>
+            <li><strong>End-to-End Encryption (E2EE):</strong> All messages and calls are encrypted on your device and can only be decrypted by the intended recipient.</li>
+            <li><strong>TLS/SSL:</strong> All data in transit is protected using strong encryption protocols.</li>
+            <li><strong>Encryption at Rest:</strong> Sensitive data stored on our servers is encrypted using AES-256.</li>
+            <li><strong>Access Controls:</strong> Strict role-based access limits who within our organization can access operational data.</li>
+            <li><strong>Regular Audits:</strong> We conduct periodic security reviews and engage independent auditors to verify our protections.</li>
+            <li><strong>Incident Response:</strong> We maintain a documented incident response plan and will notify affected users promptly in the event of a breach.</li>
+        </ul>
+    </section>
+
+    <!-- Section 7 -->
+    <section id="rights">
+        <h2><span class="icon">✅</span> 7. Your Privacy Rights</h2>
+        <p>
+            Depending on your jurisdiction, you may have the following rights regarding your personal data:
+        </p>
+        <ul>
+            <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+            <li><strong>Correction:</strong> Request that we correct or update inaccurate information.</li>
+            <li><strong>Deletion:</strong> Request deletion of your account and associated data ("Right to be Forgotten").</li>
+            <li><strong>Portability:</strong> Request your data in a structured, commonly used, machine-readable format.</li>
+            <li><strong>Restriction:</strong> Request that we limit the processing of your data in certain circumstances.</li>
+            <li><strong>Objection:</strong> Object to certain types of data processing, such as direct marketing.</li>
+            <li><strong>Withdraw Consent:</strong> Withdraw previously given consent at any time (where processing is based on consent).</li>
+        </ul>
+        <p>
+            To exercise any of these rights, please contact us at <a href="mailto:privacy@scramblix.com">privacy@scramblix.com</a>. We will respond within 30 days.
+        </p>
+    </section>
+
+    <!-- Section 8 -->
+    <section id="retention">
+        <h2><span class="icon">🕐</span> 8. Data Retention</h2>
+        <ul>
+            <li><strong>Account Data:</strong> Retained while your account is active. Deleted within 30 days of account deletion.</li>
+            <li><strong>Usage Analytics:</strong> Aggregated/anonymized data may be retained indefinitely for service improvement.</li>
+            <li><strong>Support Communications:</strong> Retained for up to 2 years after the last interaction.</li>
+            <li><strong>Log Data:</strong> Security logs retained for up to 90 days; longer if required for ongoing investigations.</li>
+        </ul>
+        <p>
+            We periodically review and delete data that is no longer necessary for the purposes for which it was collected.
+        </p>
+    </section>
+
+    <!-- Section 9 -->
+    <section id="children">
+        <h2><span class="icon">👶</span> 9. Children's Privacy</h2>
+        <p>
+            Scramblix is <strong>not intended for use by children under the age of 13</strong> (or the applicable age of digital consent in your jurisdiction). We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal data, we will take steps to delete such information promptly.
+        </p>
+    </section>
+
+    <!-- Section 10 -->
+    <section id="international">
+        <h2><span class="icon">🌍</span> 10. International Data Transfers</h2>
+        <p>
+            Scramblix operates globally. Your information may be processed and stored in servers located outside your country of residence, including in the United States and other jurisdictions. We ensure that such transfers comply with applicable data protection laws and that your data receives an adequate level of protection.
+        </p>
+    </section>
+
+    <!-- Section 11 -->
+    <section id="third-party">
+        <h2><span class="icon">🔗</span> 11. Third-Party Links &amp; Integrations</h2>
+        <p>
+            Scramblix may contain links to third-party websites or integrate with third-party services. This Privacy Policy does not apply to those services. We encourage you to review the privacy policies of any third-party services you interact with through Scramblix.
+        </p>
+    </section>
+
+    <!-- Section 12 -->
+    <section id="changes">
+        <h2><span class="icon">📝</span> 12. Changes to This Privacy Policy</h2>
+        <p>
+            We may update this Privacy Policy from time to time. When we do, we will:
+        </p>
+        <ul>
+            <li>Update the "Effective Date" at the top of this page.</li>
+            <li>Notify you via email or in-app notification for material changes.</li>
+            <li>Post the updated policy on our website with a clear revision history.</li>
+        </ul>
+        <p>
+            Your continued use of Scramblix after any changes constitutes your acceptance of the updated Privacy Policy.
+        </p>
+    </section>
+
+    <!-- Section 13 -->
+    <section id="contact">
+        <h2><span class="icon">📬</span> 13. Contact Us</h2>
+        <p>
+            If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out to us:
+        </p>
+        <div class="contact-block">
+            <p style="margin-bottom: 6px;"><strong>Privacy Officer</strong></p>
+            <p class="email">privacy@scramblix.com</p>
+            <p style="margin-top: 14px; font-size: 0.9rem; color: var(--text-muted);">
+                We strive to respond to all privacy-related inquiries within <strong>48 hours</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Scramblix</div>
+        <p>Secure. Private. Yours.</p>
+        <p style="margin-top: 12px;">&copy; 2026 Scramblix. All rights reserved.</p>
+        <p style="margin-top: 6px; font-size: 0.8rem;">
+            This document was last updated on June 28, 2026.
+        </p>
+    </footer>
+
+</div>
+
+</body>
+</html>
